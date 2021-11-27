@@ -1,5 +1,5 @@
 # DKU-Software
-Bachelors Degree Courses of department of software in Dankook University
+Bachelors Degree Courses of Software Engineering in Dankook University
 
 | Year | Semester | Subject                           | Grade |
 | ---- | -------- | --------------------------------- | ----- |
