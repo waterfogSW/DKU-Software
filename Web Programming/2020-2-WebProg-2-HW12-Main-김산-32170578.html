@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>캔버스에 파이 차트 그리기</title>
+	<style>
+		body{
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+		<hr>
+	</header>
+	<section>
+		A : <input type="number" name="grade" value="0">명
+		B : <input type="number" name="grade" value="0">명
+		C : <input type="number" name="grade" value="0">명
+		<br>
+		D : <input type="number" name="grade" value="0">명
+		F : <input type="number" name="grade" value="0">명
+		<input type="button" onclick="draw_chart()" value="차트그리기">
+		<br>
+		<canvas id="chart" width="650" height="500" style="background-color: lightblue"></canvas>
+	</section>
+	<script>
+		var canvas = document.getElementById("chart");
+		var context = canvas.getContext("2d");
+    	var colors = ["blue","green","yellow", "magenta", "red"];
+		var grades = ["A","B","C","D","F"];
+		var grade_rate = new Array();
+
+		function rate_cal(){
+			var sum = 0;
+			var input = document.getElementsByName("grade");
+			for(var i = 0; i < 5; i++){
+				sum += parseInt(input[i].value);
+			}
+			for(var i = 0; i < 5; i++){
+				grade_rate[i] = (parseInt(input[i].value) / sum);
+			}
+
+		}
+
+		function draw_chart(){
+        	context.clearRect(0,0,canvas.width,canvas.height); //캔버스 초기화
+			context.font = "15px Gothic";
+			context.fillStyle = "blue";
+
+			rate_cal()
+
+        	for(var i = 0; i < 5; i++){
+            	context.fillText(grades[i]+" 학점" + Math.floor(grade_rate[i]*100) +"% : " + colors[i], 15, 25 + i *20);
+        	}
+
+        	var center_X = canvas.width/2;
+        	var center_Y = canvas.height/2;
+        	var radius = 200;
+        	var angle = 0;
+        	for(var i = 0; i < 5; i++){
+        		context.fillStyle = colors[i];
+        		context.beginPath();
+        			context.moveTo(center_X,center_Y);
+        			context.arc(center_X,center_Y,radius,angle,angle + (Math.PI*2*grade_rate[i]));
+        		context.lineTo(center_X,center_Y);
+        			context.fill();
+        			angle += Math.PI*2*grade_rate[i];
+        	}
+    }
+	</script>
+</body>
+</html>

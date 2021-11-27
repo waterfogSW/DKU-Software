@@ -1,0 +1,42 @@
+/*2020-2-WebProg-2-HW5-MainCSS-김산-32170578.css*/
+a { text-decoration : none;}
+nav,section, footer{
+    margin : 0px;
+    padding : 0px;
+}
+header {
+    margin : 0px;
+    padding : 5px;
+    background-color: yellow; 
+}
+nav{
+    float: left;
+    height: 650px;
+    width: 20%;
+    background-color: orange;
+}
+section{
+    float: left;
+    height: 650px;
+    width: 80%;
+    background-color: skyblue;
+}
+footer {
+    height: 10%;
+    background : #B266FF;
+    clear : both; 
+}
+h1 {
+    color : brown;
+    text-align : center;
+}
+h2 {
+    color : blue;
+    text-shadow : 3px 3px 5px blue
+    }
+hr { border-top: 1px solid; }
+p {
+    font-family: 나눔손글씨 딸에게 엄마가;
+    font-size : 1em;
+    text-indent : 1em;
+    }

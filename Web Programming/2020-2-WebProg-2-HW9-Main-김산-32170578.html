@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>갬블링 게임</title>
+	<style>
+		span{
+			display: inline-block;
+			width: 40px;
+		}
+		div.box { 
+			background: linen; 
+			color : purple; 
+			font-size: 60px;
+			font-style: italic; 
+			border: solid grey 1px;
+			width: 180px;
+		}
+	</style>
+	<script>
+		var clicked = [0,0,0];
+		var rand_num = [0,0,0];
+
+		function change1(obj) {
+			if(!clicked[0]){
+				rand_num[0] = Math.floor(Math.random() * 3);
+				obj.innerHTML= rand_num[0];
+				clicked[0] = 1;
+			}
+		}
+		function change2(obj) {
+			if(!clicked[1]){
+				rand_num[1] = Math.floor(Math.random() * 3);
+				obj.innerHTML= rand_num[1];
+				clicked[1] = 1;
+			}
+		}
+		function change3(obj) {
+			var p = document.getElementById("result");
+
+			var all_clicked = true;
+			var jack_pot = true;
+
+			if(!clicked[2]){
+				rand_num[2] = Math.floor(Math.random() * 3);
+				obj.innerHTML= rand_num[2];
+				clicked[2] = 1;
+			}
+
+			for(var i = 0; i < 3; i++){
+				if(clicked[i] != 1){
+					all_clicked = false;
+					break;
+				}
+			}
+
+			for(var i = 0; i < 2; i++){
+				if(rand_num[i] != rand_num[i+1]){
+					jack_pot = false;
+					break;
+				}
+			}
+
+			if(all_clicked){
+				if (jack_pot) {
+					p.innerHTML = "Success(click here to do again)";
+				}
+				else{
+					p.innerHTML = "fail(click here to do again)";
+				}
+			}
+		}
+		function restart(){
+			location.reload();
+		}
+	</script>
+</head>
+<body>
+		<h3>갬블링 게임</h3>
+		각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+		<hr>
+    <div class="box">
+        <span onclick="change1(this)">0</span>
+    	<span onclick="change2(this)">0</span>
+    	<span onclick="change3(this)">0</span>
+    </div>
+
+    <p id="result" onclick="restart()"></p>
+</body>
+</html>

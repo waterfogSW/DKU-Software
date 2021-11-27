@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>나의 단어장 만들기</title>
+	<style>
+		body{
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h3>나의 단어장 만들기</h3>
+		<hr>
+	</header>
+	<section>
+		영어 : <input type="text" id="eng" size="10">
+		<br>
+		한글 : <input type="text" id="kor" size="10">
+		<br>
+		<button id="save" onclick="store()">단어 저장</button>
+		<button id="search" onclick="retrieve()">영단어 검색</button>
+		<button id="delete" onclick="remove()">단어 삭제</button>
+		<button id="show_all" onclick="show_all()">전체 보기</button>
+	</section>
+	<script>
+		var eng = document.getElementById("eng");
+		var kor = document.getElementById("kor");
+
+		function store(){
+			if(!window.localStorage){
+				alert("세션 스토리지를 지원하지 않습니다.");
+				return;
+			}
+			var val = localStorage.getItem(eng.value);
+			if(val != null){
+				var modi = confirm(val + "가 이미 있습니다. 수정하시겠습니까?");
+				if(modi)
+					localStorage.setItem(eng.value,kor.value);
+				return;
+			}
+			localStorage.setItem(eng.value,kor.value);
+		}
+
+		function retrieve() {
+    		if (!window.localStorage) {
+    			alert("로컬 스토리지를 지원하지 않습니다.");
+    			return;
+    		}
+			var val = localStorage.getItem(eng.value);
+			if(val == null)
+				alert(eng.value + "는 단어 리스트에  없습니다.");
+			else{
+				kor.val = val;
+				alert(kor.val);
+			}
+		}
+
+		function remove() {
+    		if (!window.localStorage) {
+    			alert("세션 스토리지를 지원하지 않습니다.");
+    			return;
+    		}
+			var val = localStorage.getItem(eng.value);
+			if(val == null)
+				alert(eng.value + "는 단어 리스트에  없습니다.");
+			else
+				localStorage.removeItem(eng.value);
+				localStorage.removeItem(kor.value);
+		}
+
+		function show_all(){
+			window.open("2020-2-WebProg-2-HW13-Main2-김산-32170578.html","단어장","width=300,height=500");
+		}
+	</script>
+</body>
+</html>

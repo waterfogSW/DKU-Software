@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>오디오 리스트 연속 재생</title>
+	<style>
+		select {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h3>오디오 리스트 연속 재생</h3>
+		<hr>
+	</header>
+	<section>
+		<p>
+			처음 play 버튼을 누르면 리스트에 있는 곡이 연속하여 자동 재생 됩니다. 
+			마우스로 다른 곡을 선택하면 곡이 바뀝니다. 
+			next 버튼을 누르면 다음 곡으로 넘어갑니다.
+		</p>
+		<hr>
+		<audio onended="next()" id="audio" src="" controls autoplay></audio>
+		<br><br>
+		<select id="select" size="3">
+			<option id="1" value="https://t1.daumcdn.net/cfile/tistory/265BF74B5854C5091A?original">Tension</option>
+			<option id="2" value="https://t1.daumcdn.net/cfile/tistory/23074A455854CB9533?original">Rhythmical</option>
+			<option id="3" value="https://t1.daumcdn.net/cfile/tistory/210399405854D66025?original">Peaceful</option>
+			<option id="4" value="https://t1.daumcdn.net/cfile/tistory/2468903D5854DB1208?original">Documentary</option>
+			<option id="5" value="https://t1.daumcdn.net/cfile/tistory/2411E9335854E27B1F?original">Inspiration</option>
+		</select>
+		<button value="play" onclick="play()">play</button>
+		<button value="next" onclick="next()">next</button>
+		<br><br>
+		<span id="show_title">현재 연주되는 곡명이 보입니다.</span>
+	</section>
+	<script>
+		var audio = document.getElementById("audio");
+		function play(){
+			audio.src = select.options[select.selectedIndex].value;
+			audio.load();
+			audio.paly();
+		}
+		function next(){
+			select.selectedIndex = (select.selectedIndex + 1)%5;
+			audio.src = select.options[select.selectedIndex].value;
+			audio.load();
+			audio.paly();
+		}
+		audio.load = function() {
+			var title = select.options[select.selectedIndex].value;
+			var print_loc = document.getElementById("show_title");
+			print_loc.innerHTML = title + "를 재생합니다.";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/*2020-2-WebProg-2-HW5-SurveyCSS-김산-32170578.css*/
+a { text-decoration : none;}
+h1 {
+    color : brown;
+    text-align : center;
+    }
+h3 {
+    display: inline;
+    font-family: none;
+    color : blue;
+    }
+hr { border-top: 1px solid; }
+p {
+    font-family: 나눔손글씨 딸에게 엄마가;
+    font-size : 1em;
+    }
+header, section, footer{
+    width: 100%
+}
+header {
+    margin : 0px;
+    padding : 5px;
+    background-color: yellow; 
+}
+section {
+    margin : 5px;
+    padding : 5px;
+    background : pink;
+    font-family: 나눔손글씨 딸에게 엄마가;
+    font-size : 1em;
+    text-indent : 1em;
+    line-height: 200%
+    }
+footer {
+    background : #B266FF;
+    }

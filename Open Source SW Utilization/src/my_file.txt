@@ -1,0 +1,11 @@
+It is expected to have a new and enhanced version of the 10nm SuperFin designs, 
+which are already integrated on the company's 11th Gen Tiger Lake processors. 
+Aside from this, Intel Alder Lake will also feature new high-power cores. 
+
+These include the new Gracenote cores, 
+which will be used for the chip's efficiency, as well as the latest Golden Lake cores. 
+This innovation simply shows that Intel now has plans for hybrid chips that will scale far beyond simple smartphone flagships. 
+
+Intel's upcoming Alder Lake processor is considered as the closest chip to Apple's latest M1 processor, 
+which is currently used in its latest laptops. Since Intel is now focusing on hybrid processors, 
+this means that the company is looking to scale its hybrid chips across its lineup could indicate that the company is looking to emulate Apple's Arm success with its own technology going forward.  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>단어장</title>
+	<style>
+		table{
+			background-color: lightblue;
+		}
+		td{
+			padding: 5px;
+		}
+		#box{ 
+			border: 1px solid green;
+			}
+		#word{
+			text-indent:10px;
+		}
+	</style>
+</head>
+<body>
+	<h3>나의 단어장 모두 출력</h3>
+	<hr>
+	<script>
+		var table = "";
+		for(var i = 0; i < localStorage.length; i++){
+			var index = i+1;
+			var value_eng = localStorage.key(i);
+			var value_kor = localStorage.getItem(value_eng);
+			table += "<tr><td id=\"box\">" + index + "</td>" + "<td id=\"word\"><b>" + value_eng + "</b></td>" + "<td id=\"word\">" + value_kor + "</td></tr>";
+		}
+		var html = "<table style=\"background-color:lightblue;\">" + table +"</table>"
+		document.write(html);
+	</script>
+</body>
+</html>

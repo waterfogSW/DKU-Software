@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>마우스 클릭 연습</title>
+	<style>
+		table { 
+			border : solid blue 1px;
+			width: 500px;
+			height: 500px;
+			border-collapse: collapse;
+		}
+		td {border : solid blue 1px;}
+		img {
+			height: 50px;
+			width: 50px;
+		}
+	</style>
+	<script>
+		function load_image(){
+			var cell_sets = document.getElementsByTagName("img");
+			var index = Math.floor(Math.random() * 100);
+			cell_sets[index].src = "http://www.segye.com/content/image/2018/08/24/20180824002497.jpg";
+			cell_sets[index].onclick = random_image;
+		}
+		function random_image(){
+			this.src = "";
+			var cell_sets = document.getElementsByTagName("img");
+			var index = Math.floor(Math.random() * 100);
+			cell_sets[index].src = "http://www.segye.com/content/image/2018/08/24/20180824002497.jpg";
+			cell_sets[index].onclick = random_image;
+		}
+	</script>
+</head>
+<body onload="load_image()">
+		<h3>마우스 클릭 연습</h3>
+		<hr>
+    <table>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+		<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>
+    	<tr>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    		<td><img></td>
+    	</tr>	
+    </table>
+
+    <p id="result" onclick="restart()"></p>
+</body>
+</html>

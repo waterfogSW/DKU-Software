@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>설문지</title>
+	<style>
+	/* CSS 스타일 시트 작성 */
+	body { background-color : aliceblue;}
+    a { text-decoration : none;}
+	h1 {
+        color : brown;
+        text-align : center;
+        }
+    h3 {
+    	display: inline;
+    	font-family: none;
+        color : blue;
+        }
+	hr { border-top: 1px solid; }
+    p {
+        font-family: 휴먼편지체;
+        font-size : 1em;
+        }
+    section {
+        background : pink;
+        font-family: 휴먼편지체;
+        font-size : 1em;
+        text-indent : 1em;
+        line-height: 200%
+        }
+	footer {
+        background : orange;
+        border-radius : 10px;
+        }
+    </style>
+</head>
+<body>
+	<header>
+		<h1>설문지</h1>
+		<p>소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.</p>
+	</header>
+	<hr>
+	<section>
+		<form>
+			<article>
+				<h3>학년</h3>
+				<input type="radio" name="grade" value="1">1학년
+				<input type="radio" name="grade" value="2">2학년
+				<input type="radio" name="grade" value="3">3학년
+				<input type="radio" name="grade" value="4">4학년
+			</article>
+			<article>
+				<h3>성별</h3>
+				<input type="radio" name="sex" value="1">남
+				<input type="radio" name="sex" value="2">여
+			</article>
+			<article>
+				<h3>관심분야</h3>
+				<select name="interested">
+					<option value="1">모바일 소프트웨어</option>
+					<option value="2">시스템 소프트웨어</option>
+					<option value="3">프론트 엔드</option>
+					<option value="4">백 엔드</option>
+					<option value="5">머신러닝</option>
+					<option value="6">기타</option>
+				</select>
+			</article>
+			<article>
+				<h3>진로(다중 선택)</h3>
+				개발<input type="checkbox" name="career" value="1">
+				기획<input type="checkbox" name="career" value="2">
+				영업<input type="checkbox" name="career" value="3">
+				창업<input type="checkbox" name="career" value="4">
+			<article>
+		</form>
+		<article>
+			<h3>남기고 싶은 말</h3>
+			<textarea cols="40" rows="10">글을 남겨주세요</textarea>
+		<article>
+	</section>
+	<footer>
+		<p><strong>Copyright 2020 by San</strong></p>
+	</footer>
+</body>
+</html>
