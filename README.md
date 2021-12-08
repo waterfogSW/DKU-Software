@@ -13,7 +13,7 @@ Bachelors Degree Courses of Software Engineering in Dankook University
 | 2020 - 2 | Data Structure(SW)                | A     |
 | 2020 - 2 | Systems Programming(SW)           | A+    |
 | 2020 - 2 | Computer Architecture             | A+    |
-| 2020 - 2 | Artificial Intelligence(SW)       | A     |
+| 2020 - 2 | Artificial Intelligence(SW)       | B+     |
 | 2020 - 1 | Applied Engineering Mathematics 1 | A+    |
 | 2020 - 1 | Object-Oriented Programming(SW)   | A     |
 | 2020 - 1 | Computer Networks(SW)             | A     |
